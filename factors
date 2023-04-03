@@ -12,13 +12,9 @@ if len(argv) != 2:
     print("Usage: factors <file>")
     exit()
 
+
 def _factorization(num):
     ''' a function to apply the factorization on the file '''
-
-    # check if the file exists
-    if len(argv) != 2:
-        print("Usage: factors <file>")
-        exit()
 
     prime = 2
     while num % prime != 0:
