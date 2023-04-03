@@ -1,0 +1,38 @@
+#!/usr/bin/python3
+'''
+Factorize as many numbers as possible into a product of two smaller numbers.
+'''
+
+
+from sys import argv
+
+
+def _factorization(num):
+    ''' a function to apply the factorization on the file '''
+
+    # check if the file exists
+    if len(argv) != 2:
+        print("Usage: factors <file>")
+        exit()
+
+    prime = 2
+    while num % prime != 0:
+        prime += 1
+
+    while num % prime == 0:
+        print("{:.0f}={:.0f}*{:.0f}".format(num, num / prime, prime))
+        num = num / prime
+
+
+# open the file and apply this function line by line
+def _factor(fileName):
+    ''' Apply factorization function to each line of the file '''
+
+    with open(fileName, encoding="utf-8") as _file:
+        for line in _file:
+            f = int(line)
+            final = _factorization(f)
+
+
+if __name__ == "__main__":
+    _factor(argv[1])
