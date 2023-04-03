@@ -7,6 +7,11 @@ Factorize as many numbers as possible into a product of two smaller numbers.
 from sys import argv
 
 
+# check if the file exists
+if len(argv) != 2:
+    print("Usage: factors <file>")
+    exit()
+
 def _factorization(num):
     ''' a function to apply the factorization on the file '''
 
